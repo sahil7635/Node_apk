@@ -16,7 +16,7 @@ services:
          - .:/work
         environment:
          - MONGO_IP=db
-         - NODE_ENV=node_app
+         - NODE_ENV=${NODE_ENV}
         command: node /work/server.js
 
     test:
@@ -28,7 +28,5 @@ services:
         volumes:
          - ..:/work
         environment:
-         - NODE_ENV=node_app
+         - NODE_ENV=${NODE_ENV}
         command: curl -s http://web:3000
-
-
